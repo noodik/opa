@@ -1,3 +1,5 @@
+import unittest
+
 from opa.week1.assignments import divide_apples
 
 def test_common_case():
