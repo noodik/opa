@@ -1,2 +1,2 @@
 def divide_apples(n, k):
-    return k // n
+    return k // n + 1
