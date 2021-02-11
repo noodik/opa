@@ -20,4 +20,3 @@ def test_common_case3():
     expected_result = 0
     actual_resulst = divide_apples(n, k)
     assert actual_resulst == expected_result
-
