@@ -1,0 +1,9 @@
+README.md
+setup.py
+opa/__init__.py
+opa.egg-info/PKG-INFO
+opa.egg-info/SOURCES.txt
+opa.egg-info/dependency_links.txt
+opa.egg-info/top_level.txt
+opa/week1/__init__.py
+opa/week1/assignments.py
