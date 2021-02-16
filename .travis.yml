@@ -1,5 +1,0 @@
-  language: python
-  install:
-    - pip install .
-  script:
-    - pytest
