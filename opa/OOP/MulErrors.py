@@ -1,4 +1,3 @@
-from sys import stdin
 from copy import deepcopy
 
 
@@ -11,6 +10,9 @@ class MatrixError(BaseException):
 class Matrix:
     def __init__(self, m):
         self.nLst = deepcopy(m)
+
+    def __eq__(self, other):
+        return self.nLst == other.nLst
 
     def __str__(self):
         return '\n'.join(['\t'.join(map(str, line)) for line in self.nLst])
@@ -41,10 +43,9 @@ class Matrix:
         if isinstance(other, int) or isinstance(other, float):
             resMul = []
             for i in range(len(self.nLst)):
-                resMul.append(map(lambda x: x * other, self.nLst[i]))
+                resMul.append(list(map(lambda x: x * other, self.nLst[i])))
             return Matrix(resMul)
-        elif isinstance(other, Matrix) and \
-                len(self.nLst[0]) == len(other.nLst):
+        elif isinstance(other, Matrix) and len(self.nLst[0]) == len(other.nLst):
             temp = Matrix.transposed(other)
             rows = self.size()[0]
             cols = temp.size()[0]
@@ -61,4 +62,6 @@ class Matrix:
     __rmul__ = __mul__
 
 
-exec(stdin.read())
+if __name__ == '__main__':
+    from sys import stdin
+    exec(stdin.read())
